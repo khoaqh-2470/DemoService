@@ -20,8 +20,6 @@ class BoundActivity : AppCompatActivity() {
 
     private val serviceConnection = object : ServiceConnection {
         override fun onServiceConnected(name: ComponentName, service: IBinder) {
-            Log.d(TAG, "onServiceConnected: ${name.className}")
-            Log.d(TAG, "onServiceDisconnected: ${name.packageName}")
             boundService = service.let {
                 it as BoundService.MyBinder
                 it.getService()
