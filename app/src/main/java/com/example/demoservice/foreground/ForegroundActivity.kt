@@ -16,7 +16,7 @@ class ForegroundActivity : AppCompatActivity() {
 
         buttonStart.setOnClickListener {
             Intent(this, ForegroundService::class.java).also {
-                startForegroundService(it)
+                startService(it)
             }
         }
         buttonStop.setOnClickListener {

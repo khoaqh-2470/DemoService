@@ -8,6 +8,7 @@ import androidx.work.OneTimeWorkRequest
 import androidx.work.WorkManager
 import com.example.demoservice.R
 import kotlinx.android.synthetic.main.activity_work.*
+import java.util.concurrent.TimeUnit
 
 class WorkActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +23,7 @@ class WorkActivity : AppCompatActivity() {
 
             val myWork = OneTimeWorkRequest.Builder(MyWork::class.java)
                 .setConstraints(myConstraints)
-//                .setInitialDelay(1000, TimeUnit.MILLISECONDS)
+                .setInitialDelay(5000, TimeUnit.MILLISECONDS)
                 .build()
 
             WorkManager
@@ -39,7 +40,7 @@ class WorkActivity : AppCompatActivity() {
 
             WorkManager
                 .getInstance(this)
-                .beginWith(listOf(workA))
+                .beginWith(workA)
                 .then(workB)
                 .then(workC)
                 .enqueue()
