@@ -17,6 +17,6 @@ class BackgroundService : Service() {
             "onStartCommand ${intent?.getStringExtra("intent")}",
             Toast.LENGTH_SHORT
         ).show()
-        return START_STICKY
+        return START_STICKY_COMPATIBILITY
     }
 }

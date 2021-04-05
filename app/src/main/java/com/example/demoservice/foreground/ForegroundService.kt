@@ -28,8 +28,8 @@ class ForegroundService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         intent?.getBooleanExtra("stop", false)?.let {
             if (it) {
-//                stopSelf()
-                stopForeground(true)
+                stopSelf()
+//                stopForeground(true)
             }
         }
         Log.d(TAG, "onStartCommand: ")

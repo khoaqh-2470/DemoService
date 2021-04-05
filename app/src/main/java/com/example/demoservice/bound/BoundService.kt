@@ -14,6 +14,10 @@ class BoundService : Service() {
         return binder
     }
 
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        return super.onStartCommand(intent, flags, startId)
+    }
+
     inner class MyBinder : Binder() {
         fun getService(): BoundService = this@BoundService
     }

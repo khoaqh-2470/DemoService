@@ -21,7 +21,7 @@ class WorkActivity : AppCompatActivity() {
 
             val myWork = OneTimeWorkRequest.Builder(MyWork::class.java)
                 .setConstraints(myConstraints)
-//                .setInitialDelay(1000, TimeUnit.MILLISECONDS)
+                .setInitialDelay(5000, TimeUnit.MILLISECONDS)
                 .build()
 
             WorkManager
@@ -42,7 +42,7 @@ class WorkActivity : AppCompatActivity() {
 
             WorkManager
                 .getInstance(this)
-                .beginWith(listOf(workA))
+                .beginWith(workA)
                 .then(workB)
                 .then(workC)
                 .enqueue()
