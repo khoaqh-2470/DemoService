@@ -20,4 +20,15 @@
         android:layout_centerHorizontal="true"
         android:text="remove" />
 
+    <TextView
+        android:id="@+id/textViewCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonRemove"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
 </RelativeLayout>
