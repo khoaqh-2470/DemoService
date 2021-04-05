@@ -36,10 +36,10 @@ class BoundActivity : AppCompatActivity() {
         bindService()
 
         buttonAdd.setOnClickListener {
-            Toast.makeText(this, "${boundService.addI()}", Toast.LENGTH_SHORT).show()
+            textViewCount.text = boundService.addI().toString()
         }
         buttonRemove.setOnClickListener {
-            Toast.makeText(this, "${boundService.removeI()}", Toast.LENGTH_SHORT).show()
+            textViewCount.text = boundService.removeI().toString()
         }
     }
 

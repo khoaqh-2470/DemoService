@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.demoservice.background.BackgroundService
+import com.example.demoservice.bound.BoundActivity
 import com.example.demoservice.foreground.ForegroundActivity
 import com.example.demoservice.intent.IntentService
 import com.example.demoservice.workmanager.WorkActivity
@@ -37,6 +38,11 @@ class MainActivity : AppCompatActivity() {
             Intent(this, BackgroundService::class.java).also {
                 it.putExtra("intent", "intent")
                 startService(it)
+            }
+        }
+        buttonBound.setOnClickListener {
+            Intent(this, BoundActivity::class.java).also {
+                startActivity(it)
             }
         }
     }
